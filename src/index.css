@@ -1,0 +1,86 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 3% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 3% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 3% 25%;
+
+    --primary: 258 86% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 1% 83%;
+    --secondary-foreground: 270 3% 25%;
+
+    --muted: 240 1% 96%;
+    --muted-foreground: 240 2% 55%;
+
+    --accent: 258 86% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 1% 83%;
+    --input: 240 1% 83%;
+    --ring: 258 86% 66%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer components {
+  .mobile-container {
+    @apply w-full max-w-md mx-auto min-h-screen flex flex-col bg-background overflow-hidden;
+  }
+  
+  .mobile-header {
+    @apply sticky top-0 z-20 bg-background py-4 px-4 border-b flex items-center;
+  }
+  
+  .mobile-content {
+    @apply flex-1 overflow-auto pb-20;
+  }
+  
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 z-20 bg-background border-t py-2 flex justify-around items-center;
+  }
+  
+  .mobile-nav-item {
+    @apply flex flex-col items-center justify-center text-xs text-neutral-300 py-1;
+  }
+  
+  .mobile-nav-item.active {
+    @apply text-purple;
+  }
+
+  .product-grid {
+    @apply grid grid-cols-2 gap-3 p-3;
+  }
+  
+  .badge-count {
+    @apply absolute -top-1 -right-1 bg-purple text-white text-xs rounded-full w-5 h-5 flex items-center justify-center;
+  }
+
+  
+  .product-card {
+    @apply transform transition-transform duration-200 hover:scale-105;
+  }
+}
